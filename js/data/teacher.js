@@ -59,6 +59,18 @@ const teacher = {
       src: 'images/photo-4-training-session.jpg',
       alt: 'Naqiya Yousaf at a Beaconhouse teacher training session (faces blurred for privacy)',
     },
+    {
+      src: 'images/photo-5-class-presentation.jpg',
+      alt: 'Students presenting during a class discussion (faces blurred for privacy)',
+    },
+    {
+      src: 'images/photo-6-result-celebration.jpg',
+      alt: 'Celebrating a marvellous Sociology result, 2024 (faces blurred for privacy)',
+    },
+    {
+      src: 'images/photo-7-receiving-certificate.jpg',
+      alt: 'A student receiving a certificate at Beaconhouse School System — Main Campus, Abbottabad (faces blurred for privacy)',
+    },
   ],
 
   // Four short credibility items shown below the hero
