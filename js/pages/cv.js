@@ -10,7 +10,7 @@ import { initReveal } from '../reveal.js'
 // so this page always points to the current, real, un-fabricated CV.
 // -----------------------------------------------------------------------
 const CV_FILE_PATH = 'documents/teacher-cv.docx'
-const CV_UPDATED_YEAR = '[YEAR]'
+const CV_UPDATED_YEAR = '2026'
 
 document.title = `Curriculum Vitae | ${teacher.name}`
 renderNavbar('cv.html')

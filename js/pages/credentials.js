@@ -14,9 +14,11 @@ sectionsContainer.innerHTML = credentialSections
     (section) => `
     <div class="about-section reveal" style="margin-bottom:56px;">
       <h2 style="margin-bottom:28px;">${section.title}</h2>
-      <div class="card-grid card-grid--2">
-        ${section.items.map(credentialCardHtml).join('')}
-      </div>
+      ${
+        section.items.length > 0
+          ? `<div class="card-grid card-grid--2">${section.items.map(credentialCardHtml).join('')}</div>`
+          : '<p class="empty-state">No entries in this category yet.</p>'
+      }
     </div>`,
   )
   .join('')

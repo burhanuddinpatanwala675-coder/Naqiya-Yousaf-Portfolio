@@ -7,7 +7,7 @@ document.title = `What My Students Say | ${teacher.name}`
 renderNavbar('testimonials.html')
 renderFooter()
 
-const FILTERS = ['All', 'O Level', 'A Level', 'Parent']
+const FILTERS = ['All', 'O Level', 'A Level', 'Student', 'Official', 'Parent']
 const grid = document.getElementById('testimonials-grid')
 
 function paintGrid(active) {

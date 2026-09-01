@@ -1,5 +1,5 @@
 import teacher from '../data/teacher.js'
-import { renderNavbar, renderFooter, statCardHtml } from '../components.js'
+import { renderNavbar, renderFooter, statCardHtml, initImageCarousel } from '../components.js'
 import { initReveal } from '../reveal.js'
 
 document.title = `${teacher.name} | Sociology Teacher | O Level & A Level`
@@ -20,9 +20,7 @@ const secondaryBtn = document.getElementById('hero-btn-secondary')
 secondaryBtn.textContent = teacher.heroButtons.secondary.label
 secondaryBtn.href = teacher.heroButtons.secondary.href
 
-const heroImg = document.getElementById('hero-portrait')
-heroImg.src = teacher.portrait.src
-heroImg.alt = teacher.portrait.alt
+initImageCarousel(document.getElementById('hero-portrait-frame'), teacher.photoGallery)
 
 document.getElementById('hero-image-caption').textContent = `${teacher.role} — ${teacher.levels}`
 

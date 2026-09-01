@@ -16,7 +16,7 @@ const contact = {
   whatsappNumber: '', // e.g. '447123456789' — leave blank to hide the WhatsApp button
   whatsappDisplay: '[WHATSAPP]',
   location: '[LOCATION]',
-  teachingMode: '[ONLINE / IN-PERSON / BOTH]',
+  teachingMode: 'Online & In-Person',
 
   social: {
     linkedin: '',

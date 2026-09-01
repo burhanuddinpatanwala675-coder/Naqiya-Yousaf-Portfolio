@@ -1,5 +1,5 @@
 import teacher from '../data/teacher.js'
-import { renderNavbar, renderFooter } from '../components.js'
+import { renderNavbar, renderFooter, initImageCarousel } from '../components.js'
 import { initReveal } from '../reveal.js'
 
 document.title = `About ${teacher.name} | Sociology Teacher`
@@ -8,9 +8,7 @@ renderFooter()
 
 document.getElementById('about-title').textContent = `About ${teacher.name}`
 
-const portrait = document.getElementById('about-portrait')
-portrait.src = teacher.portrait.src
-portrait.alt = teacher.portrait.alt
+initImageCarousel(document.getElementById('about-portrait-frame'), teacher.photoGallery)
 
 const { about } = teacher
 

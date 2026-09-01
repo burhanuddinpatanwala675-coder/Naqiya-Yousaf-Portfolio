@@ -184,8 +184,7 @@ export function credentialCardHtml(item) {
       <h3 class="credential-card__title">${item.title}</h3>
       <div class="credential-card__meta">
         <span>${item.institution}</span>
-        <span aria-hidden="true">•</span>
-        <span>${item.year}</span>
+        ${item.year ? `<span aria-hidden="true">•</span><span>${item.year}</span>` : ''}
       </div>
       ${item.description ? `<p class="credential-card__desc">${item.description}</p>` : ''}
       ${
@@ -206,7 +205,7 @@ export function certificateCardHtml(cert) {
       <div class="certificate-card__preview">${preview}</div>
       <div class="certificate-card__body">
         <h3 class="certificate-card__title">${cert.title}</h3>
-        <p class="certificate-card__meta">${cert.institution} · ${cert.year}</p>
+        <p class="certificate-card__meta">${cert.institution}${cert.year ? ` · ${cert.year}` : ''}</p>
         <a href="${cert.file}" target="_blank" rel="noopener noreferrer" class="btn btn-outline certificate-card__cta">View Certificate</a>
       </div>
     </article>`
@@ -219,7 +218,7 @@ export function testimonialCardHtml(t) {
       <p class="testimonial-card__quote">${t.quote}</p>
       <div>
         <div class="testimonial-card__name">— ${t.name}</div>
-        <div class="testimonial-card__meta">${t.level} · ${t.year}</div>
+        <div class="testimonial-card__meta">${t.level}${t.year ? ` · ${t.year}` : ''}</div>
       </div>
     </article>`
 }
@@ -271,4 +270,110 @@ export function renderFilterTabs(container, options, initial, label, onChange) {
     paint()
     onChange(active)
   })
+}
+
+// =====================================================================
+// IMAGE CAROUSEL
+// ---------------------------------------------------------------------
+// Renders a small auto-advancing photo carousel inside `frameEl` (which
+// should already have a fixed aspect ratio / overflow:hidden via CSS —
+// see .hero__image-frame). `images` is an array of { src, alt }.
+// Autoplay pauses on hover/focus and is skipped entirely for visitors
+// who prefer reduced motion.
+// =====================================================================
+export function initImageCarousel(frameEl, images, { interval = 5000, autoplay = true } = {}) {
+  if (!images || images.length === 0) return
+
+  const track = document.createElement('div')
+  track.className = 'carousel'
+  track.setAttribute('role', 'group')
+  track.setAttribute('aria-roledescription', 'carousel')
+  track.setAttribute('aria-label', 'Photographs')
+
+  track.innerHTML = images
+    .map(
+      (img, i) => `
+      <div class="carousel__slide${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-hidden="${i === 0 ? 'false' : 'true'}">
+        <img src="${img.src}" alt="${img.alt || ''}" loading="${i === 0 ? 'eager' : 'lazy'}" />
+      </div>`,
+    )
+    .join('')
+
+  frameEl.innerHTML = ''
+  frameEl.appendChild(track)
+
+  if (images.length === 1) return
+
+  const prevBtn = document.createElement('button')
+  prevBtn.type = 'button'
+  prevBtn.className = 'carousel__arrow carousel__arrow--prev'
+  prevBtn.setAttribute('aria-label', 'Previous photo')
+  prevBtn.innerHTML = '&#8249;'
+
+  const nextBtn = document.createElement('button')
+  nextBtn.type = 'button'
+  nextBtn.className = 'carousel__arrow carousel__arrow--next'
+  nextBtn.setAttribute('aria-label', 'Next photo')
+  nextBtn.innerHTML = '&#8250;'
+
+  const dots = document.createElement('div')
+  dots.className = 'carousel__dots'
+  dots.innerHTML = images
+    .map((_, i) => `<button type="button" class="carousel__dot${i === 0 ? ' is-active' : ''}" aria-label="Go to photo ${i + 1}" data-index="${i}"></button>`)
+    .join('')
+
+  frameEl.appendChild(prevBtn)
+  frameEl.appendChild(nextBtn)
+  frameEl.appendChild(dots)
+
+  const slides = Array.from(track.querySelectorAll('.carousel__slide'))
+  const dotEls = Array.from(dots.querySelectorAll('.carousel__dot'))
+  let current = 0
+  let timer = null
+
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  function goTo(index) {
+    const next = (index + images.length) % images.length
+    slides[current].classList.remove('is-active')
+    slides[current].setAttribute('aria-hidden', 'true')
+    dotEls[current].classList.remove('is-active')
+    current = next
+    slides[current].classList.add('is-active')
+    slides[current].setAttribute('aria-hidden', 'false')
+    dotEls[current].classList.add('is-active')
+  }
+
+  function start() {
+    if (prefersReducedMotion || !autoplay) return
+    stop()
+    timer = setInterval(() => goTo(current + 1), interval)
+  }
+
+  function stop() {
+    if (timer) clearInterval(timer)
+    timer = null
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goTo(current - 1)
+    start()
+  })
+  nextBtn.addEventListener('click', () => {
+    goTo(current + 1)
+    start()
+  })
+  dots.addEventListener('click', (e) => {
+    const btn = e.target.closest('.carousel__dot')
+    if (!btn) return
+    goTo(Number(btn.dataset.index))
+    start()
+  })
+
+  frameEl.addEventListener('mouseenter', stop)
+  frameEl.addEventListener('mouseleave', start)
+  frameEl.addEventListener('focusin', stop)
+  frameEl.addEventListener('focusout', start)
+
+  start()
 }

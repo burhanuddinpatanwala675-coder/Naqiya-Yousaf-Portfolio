@@ -77,12 +77,21 @@ Open **`js/data/teacher.js`** in any text editor.
 
 ---
 
-## 4. Replacing the photograph(s)
+## 4. Updating the photo carousel
 
-1. **Portrait** (hero + About page): replace `/images/teacher-portrait.jpg` with the real photograph, **keeping the exact filename** (or update `teacher.portrait.src` in `js/data/teacher.js` if you rename it). An upright (portrait-orientation) photo works best.
-2. **Teaching/classroom image**: replace `/images/teaching.jpg` the same way, or update `teacher.secondaryImage.src`.
+The Home page hero and the About page both show a small auto-advancing photo carousel, built from the `photoGallery` array in `js/data/teacher.js`:
 
-Always update the matching `alt` text in `teacher.js` to describe the real photo.
+```js
+photoGallery: [
+  { src: 'images/photo-1-class-lecture.jpg', alt: 'Description of the photo' },
+  { src: 'images/photo-2-award-ceremony.jpg', alt: 'Description of the photo' },
+  // add, remove, or reorder as many as you like
+],
+```
+
+To add a photo: place the image file in `/images/` and add an object pointing to it. To remove one: delete its object from the array. The order in the array is the order it appears in the carousel. Upright (portrait-orientation) photos with similar cropping work best since they all share the same frame.
+
+Every photo currently in the gallery has had faces blurred (including Naqiya's own), at her request. If you add new photos, blur any faces yourself before adding them here — this site does not do that automatically.
 
 ---
 
@@ -225,7 +234,7 @@ Update the placeholder domain (`https://www.example.com`) in every HTML file's `
 ## 13. Final checklist before publishing
 
 - [ ] Replace every `[TEACHER NAME]`, `[QUALIFICATION]`, `[YEAR]`, etc. placeholder in `/js/data/` with real information
-- [ ] Replace `/images/teacher-portrait.jpg` and `/images/teaching.jpg`
+- [ ] Update the photo carousel in `js/data/teacher.js` (`photoGallery`) with real photos, faces blurred if that's still the preference
 - [ ] Add real credentials in `js/data/credentials.js`
 - [ ] Add real certificate files to `/certificates/` and register them in `js/data/certificates.js`
 - [ ] Add the real CV to `/documents/teacher-cv.docx`
