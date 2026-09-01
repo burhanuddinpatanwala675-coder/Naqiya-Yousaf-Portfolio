@@ -281,7 +281,7 @@ export function renderFilterTabs(container, options, initial, label, onChange) {
 // Autoplay pauses on hover/focus and is skipped entirely for visitors
 // who prefer reduced motion.
 // =====================================================================
-export function initImageCarousel(frameEl, images, { interval = 5000, autoplay = true } = {}) {
+export function initImageCarousel(frameEl, images, { interval = 2500, autoplay = true } = {}) {
   if (!images || images.length === 0) return
 
   const track = document.createElement('div')
