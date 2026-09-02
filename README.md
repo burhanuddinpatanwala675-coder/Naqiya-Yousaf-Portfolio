@@ -91,7 +91,7 @@ photoGallery: [
 
 To add a photo: place the image file in `/images/` and add an object pointing to it. To remove one: delete its object from the array. The order in the array is the order it appears in the carousel. Upright (portrait-orientation) photos with similar cropping work best since they all share the same frame.
 
-Every photo currently in the gallery has had faces blurred (including Naqiya's own), at her request. If you add new photos, blur any faces yourself before adding them here — this site does not do that automatically.
+Every photo currently in the gallery has a light overall background blur (a soft portrait look), with Naqiya's own face left sharp and every other person's face blurred for privacy. If you add new photos, apply the same treatment yourself before adding them here — this site does not do that automatically.
 
 ---
 

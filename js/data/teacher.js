@@ -45,19 +45,19 @@ const teacher = {
   photoGallery: [
     {
       src: 'images/photo-1-class-lecture.jpg',
-      alt: 'Naqiya Yousaf teaching an A Level Sociology class (faces blurred for privacy)',
+      alt: 'Naqiya Yousaf teaching an A Level Sociology class',
     },
     {
       src: 'images/photo-2-award-ceremony.jpg',
-      alt: 'Naqiya Yousaf receiving recognition for Distinction in Sociology, Beaconhouse School System — Main Campus, Abbottabad (faces blurred for privacy)',
+      alt: 'Naqiya Yousaf receiving recognition for Distinction in Sociology, Beaconhouse School System — Main Campus, Abbottabad (other faces blurred for privacy)',
     },
     {
       src: 'images/photo-3-speech-competition.jpg',
-      alt: 'Naqiya Yousaf judging a school speech competition (faces blurred for privacy)',
+      alt: 'Naqiya Yousaf judging a school speech competition (other faces blurred for privacy)',
     },
     {
       src: 'images/photo-4-training-session.jpg',
-      alt: 'Naqiya Yousaf at a Beaconhouse teacher training session (faces blurred for privacy)',
+      alt: 'Naqiya Yousaf at a Beaconhouse teacher training session (other faces blurred for privacy)',
     },
     {
       src: 'images/photo-5-class-presentation.jpg',
@@ -65,11 +65,11 @@ const teacher = {
     },
     {
       src: 'images/photo-6-result-celebration.jpg',
-      alt: 'Celebrating a marvellous Sociology result, 2024 (faces blurred for privacy)',
+      alt: 'Naqiya Yousaf celebrating a marvellous Sociology result, 2024 (other faces blurred for privacy)',
     },
     {
       src: 'images/photo-7-receiving-certificate.jpg',
-      alt: 'A student receiving a certificate at Beaconhouse School System — Main Campus, Abbottabad (faces blurred for privacy)',
+      alt: 'Naqiya Yousaf receiving a certificate at Beaconhouse School System — Main Campus, Abbottabad (other faces blurred for privacy)',
     },
   ],
 
