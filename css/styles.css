@@ -786,6 +786,21 @@ textarea:focus-visible,
   margin-bottom: 22px;
 }
 
+.testimonial-card__person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--color-beige);
+}
+
 .testimonial-card__name {
   font-weight: 700;
   color: var(--color-navy);

@@ -65,6 +65,7 @@ const testimonials = [
     level: 'IGCSE Sociology',
     category: 'O Level',
     year: '2023',
+    photo: 'images/testimonials/haider-rehman.jpg',
   },
   {
     quote:

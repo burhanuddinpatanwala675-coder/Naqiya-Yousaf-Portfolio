@@ -150,12 +150,15 @@ Open **`js/data/testimonials.js`** and add an object:
   quote: 'The exact words the student or parent gave you.',
   name: 'Student Name',
   level: 'A Level Sociology',
-  category: 'A Level', // must be exactly: 'O Level', 'A Level', or 'Parent'
+  category: 'A Level', // must be exactly: 'O Level', 'A Level', 'Student', 'Official', or 'Parent'
   year: '2025',
+  photo: 'images/testimonials/student-name.jpg', // optional — omit entirely if you don't have one
 }
 ```
 
 The filter buttons (All / O Level / A Level / Parent) work automatically based on `category`.
+
+`photo` is optional. If you have a picture of the student (with permission to publish it), place it in `/images/testimonials/` and point to it here — a small circular photo will appear next to their name. Leave the field out entirely for testimonials without a photo.
 
 **Only add testimonials you have permission to publish.**
 

@@ -212,13 +212,19 @@ export function certificateCardHtml(cert) {
 }
 
 export function testimonialCardHtml(t) {
+  const photo = t.photo
+    ? `<img class="testimonial-card__avatar" src="${t.photo}" alt="${t.name}" loading="lazy">`
+    : ''
   return `
     <article class="testimonial-card">
       <div class="testimonial-card__mark" aria-hidden="true">&ldquo;</div>
       <p class="testimonial-card__quote">${t.quote}</p>
-      <div>
-        <div class="testimonial-card__name">— ${t.name}</div>
-        <div class="testimonial-card__meta">${t.level}${t.year ? ` · ${t.year}` : ''}</div>
+      <div class="testimonial-card__person">
+        ${photo}
+        <div>
+          <div class="testimonial-card__name">— ${t.name}</div>
+          <div class="testimonial-card__meta">${t.level}${t.year ? ` · ${t.year}` : ''}</div>
+        </div>
       </div>
     </article>`
 }
