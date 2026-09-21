@@ -35,28 +35,16 @@ const achievements = [
     year: '2023',
     description:
       'Awarded a Cambridge Outstanding Learner Award for gaining the highest mark in North Pakistan for Cambridge IGCSE Sociology, Beaconhouse School System, Abbottabad Campus.',
-  },
-  {
-    name: '[STUDENT NAME]',
-    displayAs: 'firstLast',
-    result: '[RESULT]',
-    level: 'A Level Sociology',
-    category: 'A Level',
-    examSession: '[EXAM SESSION, e.g. May/June]',
-    year: '[YEAR]',
-    description: '',
-  },
-  {
-    name: '[STUDENT NAME]',
-    displayAs: 'anonymous',
-    result: '[RESULT]',
-    level: 'O Level Sociology',
-    category: 'O Level',
-    examSession: '[EXAM SESSION, e.g. October/November]',
-    year: '[YEAR]',
-    description: '',
+    certificateImage: 'images/achievements/haider-rehman-outstanding-learner-award-2023.jpg',
   },
 ]
+
+// To add another real result: copy the object above, fill in the real
+// name/result/level/etc., and set `certificateImage` to a certificate
+// file in /images/achievements/ (or omit the field if you don't have
+// one to show). Do not invent placeholder entries — an empty slot with
+// [STUDENT NAME] / [RESULT] should never be left in this array; the
+// page simply shows however many real results are listed here.
 
 // Formats a student's name according to their chosen privacy setting.
 // `index` is the position of the achievement in the full list, used to

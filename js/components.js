@@ -231,6 +231,12 @@ export function testimonialCardHtml(t) {
 
 export function achievementCardHtml(achievement, index) {
   const displayName = formatStudentName(achievement, index)
+  const certificate = achievement.certificateImage
+    ? `
+      <a class="achievement-card__certificate" href="${achievement.certificateImage}" target="_blank" rel="noopener noreferrer">
+        <img src="${achievement.certificateImage}" alt="${displayName}'s certificate" loading="lazy">
+      </a>`
+    : ''
   return `
     <article class="achievement-card">
       <div class="achievement-card__result">${achievement.result}</div>
@@ -238,6 +244,7 @@ export function achievementCardHtml(achievement, index) {
       <div class="achievement-card__level">${achievement.level}</div>
       <div class="achievement-card__session">${achievement.examSession} ${achievement.year}</div>
       ${achievement.description ? `<p class="achievement-card__desc">${achievement.description}</p>` : ''}
+      ${certificate}
     </article>`
 }
 

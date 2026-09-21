@@ -178,6 +178,7 @@ Open **`js/data/achievements.js`**.
   examSession: 'May/June',
   year: '2025',
   description: '',
+  certificateImage: 'images/achievements/aisha-khan-certificate.jpg', // optional — omit if you don't have one
 }
 ```
 
@@ -186,6 +187,10 @@ Open **`js/data/achievements.js`**.
 - `'full'` → full name, e.g. "Aisha Khan"
 - `'firstLast'` → first name + last initial, e.g. "Aisha K."
 - `'anonymous'` → "Student A", "Student B", etc. (assigned automatically by list order)
+
+`certificateImage` is optional. If you have a picture of the student's certificate/award (with permission to publish it), place it in `/images/achievements/` and point to it here — it's shown on the card and links to the full-size image. Leave the field out for entries without a certificate photo.
+
+There is no placeholder entry in this file by default — only add an object here once you have a real, permitted result. An empty `[STUDENT NAME]` / `[RESULT]` placeholder should never be left in the array; just list however many real results you have.
 
 At the top of the same file, `achievementStats` controls the four statistics banner at the top of the page. **Leave `value` as `null` to hide a statistic entirely** — only fill in a number once it's real and confirmed.
 

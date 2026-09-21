@@ -873,6 +873,27 @@ textarea:focus-visible,
   opacity: 0.8;
 }
 
+.achievement-card__certificate {
+  display: block;
+  margin-top: 18px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.achievement-card__certificate:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.achievement-card__certificate img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .certificate-card {
   background-color: var(--color-offwhite);
   border-radius: var(--radius-lg);
