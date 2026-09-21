@@ -26,6 +26,17 @@ export const achievementStats = [
 
 const achievements = [
   {
+    name: 'Haider Rehman',
+    displayAs: 'full',
+    result: 'A* — Highest Mark in North Pakistan',
+    level: 'IGCSE Sociology',
+    category: 'O Level',
+    examSession: 'June',
+    year: '2023',
+    description:
+      'Awarded a Cambridge Outstanding Learner Award for gaining the highest mark in North Pakistan for Cambridge IGCSE Sociology, Beaconhouse School System, Abbottabad Campus.',
+  },
+  {
     name: '[STUDENT NAME]',
     displayAs: 'firstLast',
     result: '[RESULT]',

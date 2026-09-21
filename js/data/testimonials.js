@@ -60,6 +60,14 @@ const testimonials = [
   },
   {
     quote:
+      'I studied IGCSE Sociology from Ma’am Naqiya and she is one of the best teachers I’ve ever had. She made Sociology both fun and engaging. She explains topics exceptionally well and goes far beyond standard classroom support by always making herself available to answer queries. Alhamdulillah, her continuous guidance and support helped me achieve Top in North Pakistan for Sociology.',
+    name: 'Haider Rehman',
+    level: 'IGCSE Sociology',
+    category: 'O Level',
+    year: '2023',
+  },
+  {
+    quote:
       'Naqiya demonstrated excellent subject knowledge, pacing, and exam-focused teaching. She scaffolded each perspective and focused on key vocabulary, ensuring clarity of sociological concepts, and explicitly explained the structure of an IGCSE Sociology 6-marker question. This strong AfL strategy linked content to exam technique.',
     name: 'Lesson Observation',
     level: 'Beaconhouse College Programme',
