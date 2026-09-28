@@ -11,7 +11,7 @@
 // =====================================================================
 
 const contact = {
-  email: '[EMAIL]',
+  email: 'sociobynaqiya@gmail.com',
   phone: '[PHONE]',
   whatsappNumber: '', // e.g. '447123456789' — leave blank to hide the WhatsApp button
   whatsappDisplay: '[WHATSAPP]',

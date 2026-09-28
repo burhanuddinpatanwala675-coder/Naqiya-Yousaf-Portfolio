@@ -37,6 +37,18 @@ const achievements = [
       'Awarded a Cambridge Outstanding Learner Award for gaining the highest mark in North Pakistan for Cambridge IGCSE Sociology, Beaconhouse School System, Abbottabad Campus.',
     certificateImage: 'images/achievements/haider-rehman-outstanding-learner-award-2023.jpg',
   },
+  {
+    name: 'Heba Khan',
+    displayAs: 'full',
+    result: 'A* — Cambridge A Level Sociology',
+    level: 'A Level Sociology',
+    category: 'A Level',
+    examSession: 'June',
+    year: '2024',
+    description:
+      'Achieved an A* in Cambridge A Level Sociology, Beaconhouse Abbottabad Campus, June 2024 examination series.',
+    certificateImage: 'images/achievements/heba-khan-a-level-sociology-2024.jpg',
+  },
 ]
 
 // To add another real result: copy the object above, fill in the real

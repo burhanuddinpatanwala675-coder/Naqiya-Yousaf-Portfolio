@@ -29,11 +29,12 @@ const testimonials = [
   },
   {
     quote:
-      'You were one of the best teachers I’ve ever had, both academically and personality-wise. I’ll make sure to keep in touch, and thank you so much again for everything you’ve done for me — I’ll always appreciate it.',
+      'I unwillingly took up sociology as an extra subject in IGCSE — that’s where I was first introduced to Ma’am Naqiya. Her teaching style was so efficient and interactive that I fell in love with the subject. When I heard Ma’am Naqiya would be teaching in A Levels as well, I immediately decided to further pursue sociology. In A Levels I had a maths and physics combo with sociology, with plans to do computer science, but socio was so well taught that I changed my plan — and now I’m doing an undergrad in Sociology and Anthropology at Lahore University of Management Sciences.',
     name: 'Sara Zeb',
     level: 'A Level Sociology (A2)',
     category: 'A Level',
-    year: '',
+    year: '2026',
+    photo: 'images/testimonials/sara-zeb.jpg',
   },
   {
     quote:
@@ -66,6 +67,15 @@ const testimonials = [
     category: 'O Level',
     year: '2023',
     photo: 'images/testimonials/haider-rehman.jpg',
+  },
+  {
+    quote:
+      'My name is Heba. I have been Ma’am Naqiya’s student of A Level Sociology from the academic years of 2022–2024. I thrived under her due to her clarity of mind and clarity in relaying her knowledge about her subject. She is extremely well versed in A Level Sociology and none of her knowledge is lacking. There is never any room for confusion, as everything regarding the subject matter, as well as the technique on how to attempt the exam paper, is laid out by her so simply and sequentially. It was easy to retain whatever she wrote and said in class. Under her, I never felt like Sociology was hard, even when I had to do the essay question. That’s how she guided me towards an A*.',
+    name: 'Heba Khan',
+    level: 'A Level Sociology',
+    category: 'A Level',
+    year: '2024',
+    photo: 'images/testimonials/heba-khan.jpg',
   },
   {
     quote:
