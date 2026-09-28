@@ -1,5 +1,5 @@
 import teacher from '../data/teacher.js'
-import { renderNavbar, renderFooter } from '../components.js'
+import { renderNavbar, renderFooter, faqItemHtml } from '../components.js'
 import { initReveal } from '../reveal.js'
 
 document.title = `My Teaching Approach | ${teacher.name}`
@@ -18,5 +18,10 @@ document.getElementById('approach-list').innerHTML = teacher.teachingApproach
     </div>`,
   )
   .join('')
+
+const faqList = document.getElementById('faq-list')
+if (faqList && teacher.faqs) {
+  faqList.innerHTML = teacher.faqs.map(faqItemHtml).join('')
+}
 
 initReveal()

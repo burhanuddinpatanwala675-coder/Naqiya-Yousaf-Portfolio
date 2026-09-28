@@ -47,7 +47,7 @@ export function renderNavbar(activeHref) {
   mount.innerHTML = `
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__brand" aria-label="${teacher.name} — Home">
-        <span class="navbar__brand-name">${teacher.name}</span>
+        <span class="navbar__brand-name">${teacher.brandName || teacher.name}</span>
         <span class="navbar__brand-tagline">${teacher.tagline}</span>
       </a>
 
@@ -140,7 +140,7 @@ export function renderFooter() {
     <div class="container">
       <div class="footer__grid">
         <div>
-          <div class="footer__brand-name">${teacher.name}</div>
+          <div class="footer__brand-name">${teacher.brandName || teacher.name}</div>
           <p class="footer__brand-tagline">${teacher.role}<br />${teacher.levels}</p>
           ${socialHtml}
         </div>
@@ -245,6 +245,14 @@ export function achievementCardHtml(achievement, index) {
       <div class="achievement-card__session">${achievement.examSession} ${achievement.year}</div>
       ${achievement.description ? `<p class="achievement-card__desc">${achievement.description}</p>` : ''}
       ${certificate}
+    </article>`
+}
+
+export function faqItemHtml(faq) {
+  return `
+    <article class="faq-item">
+      <h3 class="faq-item__question">${faq.question}</h3>
+      <p class="faq-item__answer">${faq.answer}</p>
     </article>`
 }
 

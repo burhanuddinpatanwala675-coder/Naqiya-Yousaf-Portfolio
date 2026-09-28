@@ -15,7 +15,8 @@ const contact = {
   phone: '[PHONE]',
   whatsappNumber: '', // e.g. '447123456789' — leave blank to hide the WhatsApp button
   whatsappDisplay: '[WHATSAPP]',
-  location: '[LOCATION]',
+  location: 'Abbottabad, Pakistan',
+  inPersonAreas: 'Abbottabad',
   teachingMode: 'Online & In-Person',
 
   social: {
@@ -23,6 +24,25 @@ const contact = {
     instagram: '',
     facebook: '',
     youtube: '',
+  },
+
+  // Tuition types offered. Each value is either `true`/`false`, or a
+  // short string when there's a caveat worth showing (e.g. "depending
+  // on free slots & fee").
+  tuition: {
+    oLevelIgcse: true,
+    aLevel: true,
+    individual: 'Yes (depending upon free slots & fee)',
+    group: true,
+    online: true,
+    inPerson: true,
+  },
+
+  // Preferred teaching availability.
+  availability: {
+    days: 'Monday – Wednesday',
+    slots: ['10:00 AM – 1:00 PM', '2:30 PM – 4:30 PM'],
+    timezone: 'PST',
   },
 }
 

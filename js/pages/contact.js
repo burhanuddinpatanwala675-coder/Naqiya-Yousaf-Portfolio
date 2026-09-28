@@ -39,4 +39,40 @@ if (contact.whatsappNumber) {
 }
 actions.innerHTML = actionsHtml
 
+// ---- Tuition & availability panel ----
+const tuitionPanel = document.getElementById('tuition-panel')
+if (tuitionPanel && contact.tuition && contact.availability) {
+  const yesNo = (value) => (typeof value === 'string' ? value : value ? 'Yes' : 'No')
+
+  const tuitionRows = [
+    ['O Level / IGCSE Tuition', contact.tuition.oLevelIgcse],
+    ['A Level Tuition', contact.tuition.aLevel],
+    ['Individual Classes', contact.tuition.individual],
+    ['Group Classes', contact.tuition.group],
+    ['Online Classes', contact.tuition.online],
+    ['In-Person Classes', contact.tuition.inPerson],
+  ]
+    .map(([label, value]) => `<li class="tuition-list__item"><span>${label}</span><strong>${yesNo(value)}</strong></li>`)
+    .join('')
+
+  const slotsHtml = contact.availability.slots.map((slot) => `<li class="tuition-list__item"><span>Slot</span><strong>${slot}</strong></li>`).join('')
+
+  tuitionPanel.innerHTML = `
+    <div class="tuition-card">
+      <h3 class="tuition-card__title">What I Offer</h3>
+      <ul class="tuition-list">${tuitionRows}</ul>
+      ${contact.inPersonAreas ? `<p class="tuition-card__note">In-person teaching available in ${contact.inPersonAreas}.</p>` : ''}
+    </div>
+    <div class="tuition-card">
+      <h3 class="tuition-card__title">Preferred Teaching Hours</h3>
+      <ul class="tuition-list">
+        <li class="tuition-list__item"><span>Days</span><strong>${contact.availability.days}</strong></li>
+        ${slotsHtml}
+        <li class="tuition-list__item"><span>Timezone</span><strong>${contact.availability.timezone}</strong></li>
+      </ul>
+      <p class="tuition-card__note">Please get in touch to confirm current availability — slots depend on existing bookings.</p>
+    </div>
+  `
+}
+
 initReveal()
