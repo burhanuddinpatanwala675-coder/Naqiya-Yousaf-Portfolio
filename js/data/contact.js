@@ -12,9 +12,9 @@
 
 const contact = {
   email: 'sociobynaqiya@gmail.com',
-  phone: '[PHONE]',
-  whatsappNumber: '', // e.g. '447123456789' — leave blank to hide the WhatsApp button
-  whatsappDisplay: '[WHATSAPP]',
+  phone: '+92 322 2565177',
+  whatsappNumber: '923222565177', // e.g. '447123456789' — leave blank to hide the WhatsApp button
+  whatsappDisplay: '+92 322 2565177',
   location: 'Abbottabad, Pakistan',
   inPersonAreas: 'Abbottabad',
   teachingMode: 'Online & In-Person',
