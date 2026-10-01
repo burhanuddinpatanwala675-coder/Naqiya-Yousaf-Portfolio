@@ -21,7 +21,7 @@ const contact = {
 
   social: {
     linkedin: '',
-    instagram: '',
+    instagram: 'https://www.instagram.com/sociobynaqiya/',
     facebook: '',
     youtube: '',
   },
